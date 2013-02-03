@@ -4,75 +4,40 @@
  */
 package lab1;
 
-import javax.swing.JOptionPane;
-
 /**
  *
  * @author Mark Urbanski
  */
-public class Course {
-    private String courseName; 
-    private String courseNumber;
-    private double credits;
-    private String prerequisites; //make sure this is set to 'None' for Intro to programming.
-    
-     public Course(String courseName, String courseNumber) {
+public abstract class Course {    
+    //I think I still need to define a minimal set of data for the constructor
+    public Course(String courseName, String courseNumber) {
         this.setCourseName(courseName);
         this.setCourseNumber(courseNumber);
     }
 
-    public String getCourseName() {
-        return courseName;
-    }
+    //By providing getters and setters, I am forcing the programmer of new
+    //classes to consider all of these things, without telling them how
+    //to do it.  I WAS headed toward making this a concrete class, but let's
+    //see what happens when I fight my natural tendencies.
+    public abstract String getCourseName();
+    public abstract void setCourseName(String courseName);
+    public abstract String getCourseNumber();
+    public abstract void setCourseNumber(String courseNumber);
+    public abstract double getCredits();
+    public abstract void setCredits(double credits);
+    //I am especially proud of this one.  I know that IntroJavaCourse has
+    //no prerequisites, but I am still forcing them to return something.
+    //The problem is that I don't know what the programmer will send back
+    //if there is no prerequisite.
+    public abstract String getPrerequisites();
+    public abstract void setPrerequisites(String prerequisites);
 
-    public final void setCourseName(String courseName) {
-        //I should use a nullOrZeroLength() function to test string.
-        //Use for all string entries.
+}
+
+//May use this code later in a CheckString() method
         if(courseName == null || courseName.length() == 0) {
             JOptionPane.showMessageDialog(null,
                     "Error: courseName cannot be null of empty string");
             System.exit(0);
         }
         this.courseName = courseName;
-    }
-    
-    public String getCourseNumber() {
-        return courseNumber;
-    }
-
-    public final void setCourseNumber(String courseNumber) {
-        if(courseNumber == null || courseNumber.length() == 0) {
-            JOptionPane.showMessageDialog(null,
-                    "Error: courseNumber cannot be null of empty string");
-            System.exit(0);
-        }
-        this.courseNumber = courseNumber;
-    }
-    
-    public double getCredits() {
-        return credits;
-    }
-
-    public void setCredits(double credits) {
-        if(credits < 0.5 || credits > 4.0) {
-            JOptionPane.showMessageDialog(null,
-                    "Error: credits must be in the range 0.5 to 4.0");
-            System.exit(0);
-        }
-        this.credits = credits;
-    }
-    
-    public String getPrerequisites() {
-        return prerequisites;
-    }
-
-    public void setPrerequisites(String prerequisites) {
-        if(prerequisites == null || prerequisites.length() == 0) {
-            JOptionPane.showMessageDialog(null,
-                    "Error: prerequisites cannot be null of empty string");
-            System.exit(0);
-        }
-        this.prerequisites = prerequisites;
-    }
-
-}
