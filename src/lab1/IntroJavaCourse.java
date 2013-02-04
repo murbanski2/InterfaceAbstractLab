@@ -2,11 +2,15 @@ package lab1;
 
 /**
  * Describe responsibilities here.
+ * IntroJavaCourse must provide setters and getters as determined by Course.
+ * That means courseName, courseNumber, credits, and prerequisites.
+ * I am also including the member properties here, all private.
  *
- * @author      your name goes here
+ * @author      Mark Urbanski
  * @version     1.00
  */
-public class IntroJavaCourse {
+public class IntroJavaCourse extends Course{
+
     private String courseName; //should be private
     private String courseNumber;
     private double credits;
@@ -38,7 +42,7 @@ public class IntroJavaCourse {
         this.prerequisites = prerequisites;
     }
 
-        public void setCredits(double credits) {
+    public void setCredits(double credits) {
         if(credits < 0 || credits > 5.0) {
             System.out.println(
                     "Error: credits must be in the range 0.5 to 4.0");
@@ -47,4 +51,13 @@ public class IntroJavaCourse {
         this.setCredits(credits);
     }
 
+    public void setCourseName(String courseName) {
+        this.courseName = courseName;
+    }
+
+    public String getCourseName() {
+        return courseName;
+    }
+    
+    
 }
