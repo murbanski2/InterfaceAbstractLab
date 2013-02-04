@@ -32,7 +32,7 @@ public class Startup {
         course2.setPrerequisites("152-101");
         Course course3 = new AdvancedJavaCourse("Java - The Hard Stuff", "152-182");
         course3.setCredits(4.0);
-        course2.setPrerequisites("152-130");
+        course3.setPrerequisites("152-130");
         
         //Output the courses
         outputCourse(course1);
