@@ -8,7 +8,8 @@ public class Walker extends Rover implements Traveller{
 
     @Override
     public void travel(int direction, int feet) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        turnToHeading(direction);
+        moveOneFoot(feet);
     }
 
     public void turnToHeading(int direction) {
