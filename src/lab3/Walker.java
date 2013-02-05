@@ -7,6 +7,7 @@ package lab3;
 public class Walker extends Rover implements Traveller{
 
     @Override
+    //Unfortunately, travel is the same for both of my concrete classes.  Drat!
     public void travel(int direction, int feet) {
         turnToHeading(direction);
         moveOneFoot(feet);

@@ -8,8 +8,17 @@ public class Roller extends Rover implements Traveller{
 
     @Override
     public void travel(int direction, int feet) {
+        int totalDistance = feet;
         turnToHeading(direction);
-        moveOneFoot(feet);
+        if (feet > 100) {
+        while (totalDistance > 100) {
+            
+            System.out.println("A roller can only go 100 feet without a rest.");
+            moveOneFoot(100);
+            totalDistance -=100;
+            }
+        }
+        moveOneFoot(totalDistance);
     }
 
     public void turnToHeading(int direction) {
