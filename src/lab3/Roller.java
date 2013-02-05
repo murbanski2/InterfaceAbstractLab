@@ -9,6 +9,8 @@ public class Roller extends Rover implements Traveller{
     @Override
     public void travel(int direction, int feet) {
         int totalDistance = feet;
+        System.out.println("Command received: " + direction + " degrees for " 
+                + feet + " feet");
         turnToHeading(direction);
         if (feet > 100) {
         while (totalDistance > 100) {

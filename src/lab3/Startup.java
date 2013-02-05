@@ -21,8 +21,11 @@ public class Startup {
         
         //OK, this is starting to look a bit lame.  I really didn't need the
         //Rover to have headings and feet saved.
+        System.out.println("Sending command to Rover1");
         r1.travel(r1.getCompassHeading(), r1.getDistanceFeet());
-        r1.travel(r1.getCompassHeading(), r1.getDistanceFeet());
+        System.out.println();
+        System.out.println("Sending command to Rover2");
+        r2.travel(r2.getCompassHeading(), r2.getDistanceFeet());
         
     }
 

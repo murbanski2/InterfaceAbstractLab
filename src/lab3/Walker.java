@@ -9,6 +9,8 @@ public class Walker extends Rover implements Traveller{
     @Override
     //Unfortunately, travel is the same for both of my concrete classes.  Drat!
     public void travel(int direction, int feet) {
+        System.out.println("Command received: " + direction + " degrees for " 
+                + feet + " feet");
         turnToHeading(direction);
         moveOneFoot(feet);
     }
@@ -19,7 +21,7 @@ public class Walker extends Rover implements Traveller{
     }
 
     public void moveOneFoot(int feet) {
-        System.out.println("The rover takes " + feet + "steps to walk to "
+        System.out.println("The rover takes " + feet + " steps to walk to "
                 + "the specified location");
     }
     
